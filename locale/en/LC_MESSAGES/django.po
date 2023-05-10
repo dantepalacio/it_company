@@ -1,0 +1,156 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-10 16:16+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: .\company_app\apps.py:7
+msgid "Company"
+msgstr "Company"
+
+#: .\company_app\models.py:7 .\company_app\models.py:17
+msgid "pending"
+msgstr "pending"
+
+#: .\company_app\models.py:8
+msgid "reviewed"
+msgstr "reviewed"
+
+#: .\company_app\models.py:12
+msgid "first name"
+msgstr "first name"
+
+#: .\company_app\models.py:13
+msgid "last name"
+msgstr "last name"
+
+#: .\company_app\models.py:14 .\company_app\models.py:79
+msgid "email"
+msgstr "email"
+
+#: .\company_app\models.py:15
+msgid "message"
+msgstr "message"
+
+#: .\company_app\models.py:17
+msgid "status"
+msgstr "status"
+
+#: .\company_app\models.py:23
+msgid "сontact"
+msgstr "сontact"
+
+#: .\company_app\models.py:24
+msgid "сontacts"
+msgstr "сontacts"
+
+#: .\company_app\models.py:35 .\company_app\models.py:43
+#: .\company_app\models.py:54
+msgid "title"
+msgstr "title"
+
+#: .\company_app\models.py:36
+msgid "price"
+msgstr "price"
+
+#: .\company_app\models.py:39
+msgid "service"
+msgstr "service"
+
+#: .\company_app\models.py:40
+msgid "services"
+msgstr "services"
+
+#: .\company_app\models.py:44 .\company_app\models.py:55
+#: .\company_app\models.py:63
+msgid "description"
+msgstr "description"
+
+#: .\company_app\models.py:45
+msgid "image"
+msgstr "image"
+
+#: .\company_app\models.py:46
+msgid "area"
+msgstr "area"
+
+#: .\company_app\models.py:47
+msgid "client"
+msgstr "client"
+
+#: .\company_app\models.py:50
+msgid "project"
+msgstr "project"
+
+#: .\company_app\models.py:51
+msgid "projects"
+msgstr "projects"
+
+#: .\company_app\models.py:56
+msgid "data"
+msgstr "data"
+
+#: .\company_app\models.py:59 .\company_app\models.py:60
+msgid "news"
+msgstr "news"
+
+#: .\company_app\models.py:66 .\company_app\models.py:67
+msgid "about company"
+msgstr "about company"
+
+#: .\company_app\models.py:72
+msgid "Номер телефона должен быть в формате: '+7-7XX-XXX-XX-XX'."
+msgstr "The phone number must be in the format: '+7-7XX-XXX-XX-XX'."
+
+#: .\company_app\models.py:76
+msgid "Номер телефона должен быть в формате: '+7-7212-XX-XX-XX'."
+msgstr "The phone number must be in the format: '+7-7212-XX-XX-XX'."
+
+#: .\company_app\models.py:80
+msgid "adress"
+msgstr "adress"
+
+#: .\company_app\models.py:81
+msgid "phone"
+msgstr "phone"
+
+#: .\company_app\models.py:82
+msgid "city phone"
+msgstr "city phone"
+
+#: .\company_app\models.py:83
+msgid "location"
+msgstr "location"
+
+#: .\company_app\models.py:86 .\company_app\models.py:87
+msgid "communication"
+msgstr "communication"
+
+#: .\company_project\settings.py:136
+msgid "Administration Panel"
+msgstr "Administration Panel"
+
+#: .\company_project\settings.py:137 .\company_project\settings.py:138
+msgid "Admin panel"
+msgstr "Admin panel"
+
+#: .\company_project\settings.py:139
+msgid "Welcome"
+msgstr "Welcome"
+
+#: .\company_project\settings.py:149
+msgid "Email Support Service"
+msgstr "Email Support Service"

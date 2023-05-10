@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Қызметтер тізімі</h1>
+
+{% block title %}
+
+{% endblock title %}
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                Қызмет атауы
+            </th>
+            <th>
+                Бағасы
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for service in services %}
+        <tr>
+            <td>
+                {{service.name}}
+            </td>
+            <td>
+                {{service.price}}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}

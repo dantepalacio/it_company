@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Projects
+{% endblock title %}
+
+{% block css_links %} 
+    <link rel="stylesheet" href="{% static 'css/projects_page.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <main>
+    
+        <div class="projects_block">
+            <h1>Біздің жобалар</h1>
+        
+            <ul>
+                {% for project in projects %}
+                <li>
+                    <a href="{% url 'project_detail_page' project.pk %}">
+                        <h2>{{project.name}}</h2>
+                    </a>
+                    <p>Қызмет саласы: {{project.area}}</p>
+                    <p>Клиент: {{project.client}}</p>
+                </li>
+                {%endfor%}
+            </ul>
+        
+        </div>
+    </main>
+
+{% endblock content %}
+
+{% block js_scripts %}
+    <script src="{% static 'js/projects_page.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_links %}
+    <link rel="stylesheet" href="{% static 'css/email_message/message_request.css' %}">
+{% endblock css_links %}
+
+{% block title%}
+
+{% endblock title%}
+
+{% block content %}
+
+    <main>
+        <form method="post" autocomplete="off">
+            
+            {% csrf_token %}
+            <div class="form_block">
+                <h1>Жауап жіберу</h1>
+                {{ form_answer }}
+                <button type="submit">Жіберу</button>
+            </div>
+    
+        </form>
+
+        {% for contact in contacts %}
+            <div id="contact_{{ contact.id }}" style="display: none;">
+              <p>Аты: {{ contact.first_name }}</p>
+              <p>Тегі: {{ contact.last_name }}</p>
+              <p>Пошта: {{ contact.email }}</p>
+              <p>Хабар: {{ contact.message }}</p>
+            </div>
+        {% endfor %}
+
+    </main>
+    <script>
+        var select = document.querySelector("#id_contact");
+        var contacts = document.querySelectorAll("[id^='contact_']");
+        console.log(select);
+        console.log(contacts);
+
+        select.addEventListener("change", function(event) {
+          var selected = event.target.value;
+          for (var i = 0; i < contacts.length; i++) {
+            if (contacts[i].getAttribute("id") === "contact_" + selected) {
+              contacts[i].style.display = "block";
+            } else {
+              contacts[i].style.display = "none";
+            }
+          }
+        });
+      </script>
+
+
+
+{% endblock  %}
+
+
+{% block js_scripts %}
+    
+    <script src="{% static 'js/email_message/message_request.js' %}"></script>
+{% endblock %}

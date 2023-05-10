@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}
+Жаңалықтар
+{% endblock title %}
+
+
+{% block content %}
+<h1>Жаңалықтар</h1>
+{% for new in news %}
+<a href="{% url 'news_detail_page' new.pk %}"><h1>{{new.title}}</h1></a>
+<h4>{{new.data}}</h4>
+<p>{{new.info|truncatechars:'20' }}</p>
+<hr>
+{% endfor %}
+
+{% endblock %}
+

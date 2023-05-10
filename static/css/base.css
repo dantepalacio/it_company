@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* -------------------------------------- */
+:root {
+  --black: #313131;
+  --white: #ffffff;
+  --grey: #e7e7e7;
+  --blue: #113fe6;
+  --black-blue: #0d257a;
+
+}
+
+
+
+body {
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+}
+
+._logo {
+    color: var(--black);
+    font-family: "Roboto";
+}
+
+.navbar_block {
+    height: 80px;
+    background: var(--grey);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    z-index:100;
+}
+
+._navbar_list {
+    display: flex;
+}
+
+._navbar_list li {
+    margin-right: 30px
+}
+
+._navbar_list li:last-child {
+    margin-right: 0;
+}
+
+/* ._navbar_list li a {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+._navbar_list li a:hover {
+  transform: scale(0.95);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+} */
+
+/* ------------------------ */
+._navbar_list li a {
+  width: 190px;
+  height: 65px;
+  color: var(--black);
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  
+  border-radius: 5px;
+  /* -webkit-box-reflect: below 10px linear-gradient(transparent, #00000045); */
+  transition: font-weight 0.1s ease;
+}
+
+._navbar_list li a:hover {
+  font-weight: 600;
+}
+._navbar_list li a::after {
+  content: '';
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 0;
+  border-top: 0;
+  top: 10px;
+  left: 16px;
+  border-radius: 5px 0 0 0;
+  transition: 0.5s;
+}
+._navbar_list li a::before {
+  content: '';
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-right: 0;
+  border-bottom: 0;
+  right: 16px;
+  bottom: 10px;
+  border-radius: 0 0 5px 0;
+  transition: 0.5s;
+}
+._navbar_list li a:hover::after, 
+._navbar_list li a:hover::before {
+  width: calc(10% - 2px);
+  height: calc(30% - 2px);
+  /* border-radius: 5px; */
+}
+
+._navbar_list li a:hover::after {
+  border-left: 1px solid var(--blue);
+  border-top: 1px solid var(--blue);
+}
+
+._navbar_list li a:hover::before {
+  border-right: 1px solid var(--blue);
+  border-bottom: 1px solid var(--blue);
+}
+
+/* -------------------------- */
+
+
+#request_btn {
+    font-size: 17px;
+    color: var(--white);
+    border: none;
+    background-color: var(--blue);
+    padding: 7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+#request_btn:hover {
+    background: #1032ad;
+}
+
+
+.request_modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0);
+  background-color: rgba(0,0,0, 0.4);
+}
+
+.request_modal__content {
+  background-color: var(--grey);
+  margin: 7% auto;
+  padding: 20px;
+  border-radius: 20px;
+  width: 30%;
+  animation-name: modal-open;
+  animation-duration: 0.5s;
+}
+
+.request_modal__content h1 {
+  color: var(--black);
+}
+
+
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--black);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form_block input:focus,
+.form_block textarea:focus,
+.form_block input:active,
+.form_block textarea:active {
+  outline: none;
+}
+
+@keyframes modal-open {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.form_block {
+  text-align: center;
+}
+
+.form_block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 30px 0;
+}  
+
+.form_block input {
+  width: 250px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 10px;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+.form_block textarea {
+  border: none;
+  border-radius: 10px;
+  resize: none;
+  padding: 15px;
+  width: 300px;
+  height: 130px;
+  margin-top: 10px;
+}
+
+.submit_btn {
+  border: none;
+  background: var(--blue);
+  border-radius: 5px;
+  color: var(--white);
+  padding: 5px 15px;
+  cursor: pointer;
+  width: 60%;
+  margin-bottom: 10px;
+  transition: background 0.3s ease-in-out;
+}
+
+.submit_btn:hover {
+  background: #1032ad;
+}

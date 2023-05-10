@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% block title %}
+
+{% endblock title %}
+
+
+{% comment %} {% for project in projects %} {% endcomment %}
+
+<h1>{{projects.name}}</h1>
+<p>{{projects.description}}</p>
+<img src="{{projects.image.url}}" alt="{{projects.name}}">
+<p>Қызмет саласы: {{projects.area}}</p>
+<p>Клиент: {{projects.client}}</p>
+{% comment %} {% endfor %} {% endcomment %}
+
+{% endblock content %}
+

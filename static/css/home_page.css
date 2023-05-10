@@ -1,0 +1,113 @@
+:root {
+    --black: #313131;
+    --white: #ffffff;
+    --grey: #e7e7e7;
+    --blue: #113fe6;
+    --black-blue: #0d257a;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    color: var(--black);
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.request_form {
+    margin-top: 50px;
+}
+
+
+.about_company {
+    height: 100vh;
+    width: 100%;
+}
+
+.ac_img {
+    width: 100%;
+    height: 100%;
+}
+
+.titles_block h1 {
+    position: relative;
+    margin-bottom: 30px;
+    color: var(--black-blue);
+}
+
+.titles_block h2 {
+    margin-bottom: 20px;
+}
+
+.about_company p {
+    font-size: 18px;
+}
+
+.titles_block h1::before {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-top: 0.3rem solid var(--black-blue);
+    border-left: 0.3rem solid var(--black-blue);
+    top: -0.2rem;
+    left: 26rem;
+}
+
+.titles_block h1::after {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-top: 0.3rem solid var(--black-blue);
+    border-left: 0.3rem solid var(--black-blue);
+    bottom: -0.2rem;
+    right: 26rem;
+    transform: rotate(180deg);
+}
+
+
+.titles_block {
+    text-align: center;
+}
+
+.sidebar_block {
+    margin: 50px 200px 30px 90px;
+    position: fixed;
+    top: 5;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.sidebar_block.show_hide {
+    opacity: 1;
+}
+
+.main_block {
+    margin-top: 50px;
+    margin-left: 20rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.sidebar_lists li {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+.sidebar_lists li a {
+    font-size: 20px;
+    color: var(--black);
+}
+
+.sidebar_lists li a:hover {
+    border-bottom: 1px solid var(--black);
+}
+

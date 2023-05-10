@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Компания туралы ақпарат</h1>
+{% for text in info %}
+<p>{{text.text|linebreaks}}</p>
+{% endfor %}
+{% endblock content %}
+

@@ -1,0 +1,58 @@
+:root {
+    --black: #313131;
+    --white: #ffffff;
+    --grey: #e7e7e7;
+    --blue: #113fe6;
+}
+
+main {
+    font-family: "Montserrat";
+}
+
+.form_block {
+    /* text-align: center; */
+    margin: 5% auto;
+    align-items: center;
+    justify-content: center;
+    background: var(--grey);
+    width: 50%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 1px 3px 8px 0px rgba(0,0,0,0.20);
+}
+
+.form_block h1 {
+    font-size: 30px;
+
+}
+
+.form_block textarea {
+    width: 600px;
+    height: 200px;
+    margin: 10px 0 30px 0;
+}
+
+#label_1 {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.form_block select {
+    margin-bottom: 20px;
+}
+
+.form_block button {
+    border: none;
+    border-radius: 5px;
+    background-color: var(--blue);
+    padding: 5px 10px;
+    cursor: pointer;
+    color: var(--white);
+    width: 80%;
+    margin-bottom: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+.form_block button:hover {
+    background: #1032ad;
+}

@@ -1,0 +1,159 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-10 18:05+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: .\company_app\apps.py:7
+msgid "Company"
+msgstr "Компания"
+
+#: .\company_app\models.py:7 .\company_app\models.py:17
+msgid "pending"
+msgstr "қарастырылып отырған"
+
+#: .\company_app\models.py:8
+msgid "reviewed"
+msgstr "қаралды"
+
+#: .\company_app\models.py:12
+msgid "first name"
+msgstr "аты"
+
+#: .\company_app\models.py:13
+msgid "last name"
+msgstr "тегі"
+
+#: .\company_app\models.py:14 .\company_app\models.py:79
+msgid "email"
+msgstr "электрондық пошта"
+
+#: .\company_app\models.py:15
+msgid "message"
+msgstr "хабар"
+
+#: .\company_app\models.py:17
+msgid "status"
+msgstr "мәртебесі"
+
+#: .\company_app\models.py:23
+msgid "сontact"
+msgstr "байланыс"
+
+#: .\company_app\models.py:24
+msgid "сontacts"
+msgstr "байланыстар"
+
+#: .\company_app\models.py:35 .\company_app\models.py:43
+#: .\company_app\models.py:54
+msgid "title"
+msgstr "тақырып"
+
+#: .\company_app\models.py:36
+msgid "price"
+msgstr "бағасы"
+
+#: .\company_app\models.py:39
+msgid "service"
+msgstr "қызмет"
+
+#: .\company_app\models.py:40 .\templates\base.html:33
+msgid "services"
+msgstr "қызметтер"
+
+#: .\company_app\models.py:44 .\company_app\models.py:55
+#: .\company_app\models.py:63
+msgid "description"
+msgstr "сипаттамасы"
+
+#: .\company_app\models.py:45
+msgid "image"
+msgstr "сурет"
+
+#: .\company_app\models.py:46
+msgid "area"
+msgstr "қызмет саласы"
+
+#: .\company_app\models.py:47
+msgid "client"
+msgstr "клиент"
+
+#: .\company_app\models.py:50
+msgid "project"
+msgstr "жоба"
+
+#: .\company_app\models.py:51 .\templates\base.html:34
+msgid "projects"
+msgstr "жобалар"
+
+#: .\company_app\models.py:56
+msgid "data"
+msgstr "деректер"
+
+#: .\company_app\models.py:59 .\company_app\models.py:60
+#: .\templates\base.html:32
+msgid "news"
+msgstr "жаңалықтар"
+
+#: .\company_app\models.py:66 .\company_app\models.py:67
+#: .\templates\base.html:35
+msgid "about company"
+msgstr "компания туралы"
+
+#: .\company_app\models.py:72
+msgid "Номер телефона должен быть в формате: '+7-7XX-XXX-XX-XX'."
+msgstr "Телефон нөмірі келесі форматта болуы керек: '+7-7XX-XXX-XX-XX'."
+
+#: .\company_app\models.py:76
+msgid "Номер телефона должен быть в формате: '+7-7212-XX-XX-XX'."
+msgstr "Телефон нөмірі келесі форматта болуы керек: '+7-7212-XX-XX-XX'."
+
+#: .\company_app\models.py:80
+msgid "adress"
+msgstr "мекенжайы"
+
+#: .\company_app\models.py:81
+msgid "phone"
+msgstr "телефон нөмірі"
+
+#: .\company_app\models.py:82
+msgid "city phone"
+msgstr "қалалық телефон"
+
+#: .\company_app\models.py:83
+msgid "location"
+msgstr "орналасуы"
+
+#: .\company_app\models.py:86 .\company_app\models.py:87
+msgid "communication"
+msgstr "байланыс"
+
+#: .\company_project\settings.py:139
+msgid "Administration Panel"
+msgstr "Басқару тақтасы"
+
+#: .\company_project\settings.py:140 .\company_project\settings.py:141
+msgid "Admin panel"
+msgstr "Әкімші панелі"
+
+#: .\company_project\settings.py:142
+msgid "Welcome"
+msgstr "Қош келдіңіз"
+
+#: .\company_project\settings.py:152
+msgid "Email Support Service"
+msgstr "Электрондық поштаны қолдау қызметі"
