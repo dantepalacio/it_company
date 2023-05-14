@@ -1,19 +1,43 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load i18n %}
+
+{% block css_links %}
+    <link rel="stylesheet" href="{% static 'css/news_page.css' %}">
+{% endblock %}
 
 {% block title %}
 Жаңалықтар
 {% endblock title %}
 
 
-{% block content %}
-<h1>Жаңалықтар</h1>
-{% for new in news %}
-<a href="{% url 'news_detail_page' new.pk %}"><h1>{{new.title}}</h1></a>
-<h4>{{new.data}}</h4>
-<p>{{new.info|truncatechars:'20' }}</p>
-<hr>
-{% endfor %}
 
-{% endblock %}
+
+{% block content %}
+
+
+<div class="news_block">
+    <div class="container">
+        <h1 class="news_title">Жаңалықтар</h1>
+        <div class="news">
+
+            {% for new in news %}
+                <a class="news_page__btn" href="{% url 'news_detail_page' new.pk %}">
+                    <div class="news_item">
+                        <h1 class="new_title">{{new.title}}</h1>
+                        <h4 class="new_date">{{new.data}}</h4>
+                        <p class="new_descr">{{new.info|truncatechars:'20' }}</p> 
+                    </div>
+                </a>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}
+
+
 

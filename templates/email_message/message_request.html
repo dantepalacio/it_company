@@ -12,25 +12,36 @@
 {% block content %}
 
     <main>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div class="loader"></div>
+          <p id="modal-message"></p>
+        </div>
+      </div>
+      
+
         <form method="post" autocomplete="off">
             
             {% csrf_token %}
             <div class="form_block">
                 <h1>Жауап жіберу</h1>
+
+                {% for contact in contacts %}
+                  <div class="user_info" id="contact_{{ contact.id }}" style="display: none;">
+                    <p>Аты:  {{ contact.first_name }}</p>
+                    <p>Тегі:  {{ contact.last_name }}</p>
+                    <p>Пошта:  {{ contact.email }}</p>
+                    <p>Хабар:  {{ contact.message }}</p>
+                  </div>
+                {% endfor %}
+
                 {{ form_answer }}
-                <button type="submit">Жіберу</button>
+                <button id="submit-button" type="submit">Жіберу</button>
             </div>
     
         </form>
 
-        {% for contact in contacts %}
-            <div id="contact_{{ contact.id }}" style="display: none;">
-              <p>Аты: {{ contact.first_name }}</p>
-              <p>Тегі: {{ contact.last_name }}</p>
-              <p>Пошта: {{ contact.email }}</p>
-              <p>Хабар: {{ contact.message }}</p>
-            </div>
-        {% endfor %}
 
     </main>
     <script>
@@ -49,6 +60,37 @@
             }
           }
         });
+
+
+
+        
+        const modal = document.getElementById("myModal");
+const message = document.getElementById("modal-message");
+
+function showModal() {
+  modal.style.display = "block";
+}
+
+function hideModal() {
+  modal.style.display = "none";
+}
+
+function sendMessage() {
+  console.log("sendMessage() was called");
+  showModal();
+  // отправка заявки на сервер...
+  setTimeout(function() {
+    console.log("setTimeout function was called");
+    message.innerText = "Заявка была успешна отправлена!";
+    hideModal();
+  }, 5000); // время задержки в миллисекундах
+
+}
+
+const button = document.getElementById("submit-button");
+button.addEventListener("click", sendMessage);
+
+
       </script>
 
 

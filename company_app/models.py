@@ -31,10 +31,17 @@ class TechsupportAnswer(models.Model):
     contact = models.ForeignKey(Contact, on_delete=models.CASCADE)
 
 
+Services_set = (
+    (1, "Веб разработка"),
+    (2, "Мобильная разработка"),
+    (3, "Маркетинг"),
+)
+
 class Services(models.Model):
     name = models.CharField(_("title"), max_length=255)
     price = models.PositiveIntegerField(_("price"), null=False, blank=True)
-    
+    set_services = models.IntegerField(choices=Services_set, null=True, blank=False)
+
     class Meta:
         verbose_name = _('service')
         verbose_name_plural = _('services')
@@ -54,6 +61,7 @@ class News(models.Model):
     title = models.CharField(_("title"), max_length=50)
     info = models.TextField(_("description"), max_length=5000)
     data = models.DateTimeField(_("data"), auto_now_add=True)
+    image = models.ImageField(upload_to="news_image/", blank=True, null=True)
 
     class Meta:
         verbose_name = _('news')

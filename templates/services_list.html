@@ -1,35 +1,100 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block content %}
-<h1>Қызметтер тізімі</h1>
+{% block css_links %} 
+    <link rel="stylesheet" href="{% static 'css/services.css' %}">
+{% endblock %}
+
+
 
 {% block title %}
 
 {% endblock title %}
+<title>Қызметтер</title>
+{% block content %}
+    
 
-<table>
-    <thead>
-        <tr>
-            <th>
-                Қызмет атауы
-            </th>
-            <th>
-                Бағасы
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for service in services %}
-        <tr>
-            <td>
-                {{service.name}}
-            </td>
-            <td>
-                {{service.price}}
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<div class="services_block">
+    <div class="container">
+        
+        <h1>Қызметтер тізімі</h1>
+        <div class="services">
+            
+            <div class="tabs">
+                <button class="tab-btn" data-set="2">Мобильная разработка</button>
+                <button class="tab-btn" data-set="1">Веб-разработка</button>
+                <button class="tab-btn" data-set="3">Маркетинг</button>
+              
+                <div class="tab-content active" id="tab-2">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Қызмет атауы</th>
+                        <th>Бағасы</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for service in services %}
+                      {% if service.set_services == 2 %}
+                      <tr>
+                        <td>{{service.name}}</td>
+                        <td>{{service.price}} тнг</td>
+                      </tr>
+                      {% endif %}
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              
+                <div class="tab-content" id="tab-1">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Қызмет атауы</th>
+                        <th>Бағасы</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for service in services %}
+                      {% if service.set_services == 1 %}
+                      <tr>
+                        <td>{{service.name}}</td>
+                        <td>{{service.price}} тнг</td>
+                      </tr>
+                      {% endif %}
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              
+                <div class="tab-content" id="tab-3">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Қызмет атауы</th>
+                        <th>Бағасы</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for service in services %}
+                      {% if service.set_services == 3 %}
+                      <tr>
+                        <td>{{service.name}}</td>
+                        <td>{{service.price}} тнг</td>
+                      </tr>
+                      {% endif %}
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+        
+        </div>
+    </div>  
+</div>    
+
 
 {% endblock content %}
+
+{% block js_scripts %}
+    <script src="{% static 'js/services.js' %}"></script>
+{% endblock %}

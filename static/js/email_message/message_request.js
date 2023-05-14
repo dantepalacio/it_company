@@ -1,12 +1,12 @@
 const labels = document.getElementsByTagName("label");
 
-labels[0].textContent = "Текст ответа";
-labels[1].textContent = "Выберите контакт";
+labels[0].textContent = "Жауап мәтіні";
+labels[1].textContent = "Контактіні таңдаңыз";
 labels[0].setAttribute("id", "label_1");
 
 
 
-textarea[1].placeholder = "Введите текст ответа";
+textarea[1].placeholder = "Жауап мәтінін енгізіңіз";
 
 
 
@@ -24,4 +24,5 @@ select.addEventListener("change", function(event) {
     }
 }
 });
+
 

@@ -7,29 +7,31 @@
 
 {% block css_links %} 
     <link rel="stylesheet" href="{% static 'css/projects_page.css' %}">
+    
 {% endblock %}
 
 {% block content %}
 
-    <main>
-    
-        <div class="projects_block">
-            <h1>Біздің жобалар</h1>
-        
-            <ul>
-                {% for project in projects %}
-                <li>
-                    <a href="{% url 'project_detail_page' project.pk %}">
-                        <h2>{{project.name}}</h2>
-                    </a>
-                    <p>Қызмет саласы: {{project.area}}</p>
-                    <p>Клиент: {{project.client}}</p>
-                </li>
-                {%endfor%}
-            </ul>
-        
+
+<div class="container">
+    {% for project in projects %}
+    <div class="shadow-lg mb-5 bg-white rounded">
+        <div class="card my-3">
+            <h5 class="card-header"><a href="{% url 'project_detail_page' project.pk%}">{{project.name}}</a></h5>
+            <div class="card-body">
+            <h5 class="card-title"><p>Қызмет саласы: {{project.area}}</p> <p>Клиент: {{project.client}}</p> </h5>
+            <p class="card-text">{{project.description|truncatechars:'150'}}</p>
+            
+            {% comment %} <a href="{% url 'news_detail_page' new.pk %}" class="btn btn-primary">Оқу</a> {% endcomment %}
+            </div>
         </div>
-    </main>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
 
 {% endblock content %}
 

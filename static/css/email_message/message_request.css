@@ -9,6 +9,51 @@ main {
     font-family: "Montserrat";
 }
 
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    height: 30%;
+    border-radius: 20px;
+    text-align: center;
+  }
+  
+  .loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    margin: 15% auto;
+  }
+
+  #modal-message {
+    font-size: 20px;
+    color: var(--black)
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+
 .form_block {
     /* text-align: center; */
     margin: 5% auto;
@@ -16,14 +61,38 @@ main {
     justify-content: center;
     background: var(--grey);
     width: 50%;
-    height: 500px;
+    padding: 30px;
+    max-height: 100rem;
     border-radius: 10px;
     box-shadow: 1px 3px 8px 0px rgba(0,0,0,0.20);
 }
 
 .form_block h1 {
     font-size: 30px;
+}
 
+select {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    margin-top: 1rem;
+    background-color: #fff;
+}
+
+option {
+    font-size: 14px;
+    color: #333;
+}
+
+select:focus, select:active {
+    outline: none;
+}
+
+.user_info {
+    text-align: justify;
+    margin: 1rem 0;
 }
 
 .form_block textarea {

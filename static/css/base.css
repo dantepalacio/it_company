@@ -78,17 +78,20 @@ select {
 :root {
   --black: #313131;
   --white: #ffffff;
-  --grey: #e7e7e7;
+  --grey: #f4f3f3;
   --blue: #113fe6;
   --black-blue: #0d257a;
-
 }
 
-
+html {
+  scroll-behavior: smooth;
+}
 
 body {
+
     /* font-family: 'Roboto', sans-serif; */
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif !important;
+    text-decoration: none;
 }
 
 ._logo {
@@ -319,4 +322,10 @@ body {
 
 .submit_btn:hover {
   background: #1032ad;
+}
+
+
+/* --------- */
+a {
+  text-decoration: none !important;
 }

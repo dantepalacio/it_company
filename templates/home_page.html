@@ -4,6 +4,12 @@
 
 {% block css_links %}
 <link rel="stylesheet" href="{% static 'css/home_page.css' %}">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/> -->
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper/swiper-bundle.min.css"
+  />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 {% endblock %}
 
 {% block title %}
@@ -18,19 +24,20 @@ ICompany
       <nav> 
           <ul class="sidebar_lists">
               <li><a href="#ac">Компания туралы</a></li>
-              {% comment %} <li><a href="/service-2/">Сервисы</a></li> {% endcomment %}
-              <li><a href="/service-3/">Қызметтер</a></li>
-              <li><a href="/service-3/">Біздің жобалар</a></li>
-              <li><a href="/service-3/">Пікірлер</a></li>
-              <li><a href="/service-3/">Байланыс</a></li>
+              <li><a href="{%url 'news_page'%}">Жаңалықтар</a></li>
+              <li><a href="{% url 'services_page' %}">Қызметтер</a></li>
+              <li><a href="{% url 'projects_page' %}">Жобалар</a></li>
+              <li><a href="{% url 'about_company_page' %}">Компания туралы</a></li>
           </ul>
       </nav>
     </div>
 
+
+    <button class="scroll-top-btn"><img class="scroll-top-img" src="{% static 'img/arrow.svg' %}" alt=""></button>
+
     <div class="main_block">
       <div class="container">
         <div id="ac" class="about_company">
-          <!-- <img class="ac_img" src="{% static 'img/Robotics.jpg' %}" alt=""> -->
           <div class="titles_block">
             <h1>Компания туралы</h1>
             <h2>Біз сіздің брендіңіз үшін шығармашылық жұмыс жасаймыз!</h2>
@@ -38,8 +45,7 @@ ICompany
 
           <p>Біздің IT компаниямыз деректерді сақтау саласындағы көшбасшы болып табылады және тұтынушыларға жоғары сапалы деректерді сақтау, өңдеу және қорғау қызметтерін ұсынады. Біз әлемнің түкпір-түкпірінен келген клиенттерден өтінімдерді қабылдаймыз және оларға бизнес үшін ең тиімді және инновациялық шешімдерді ұсынамыз.
             Біз біздің компанияның ең заманауи технологиялармен және құралдармен жұмыс істейтінін мақтан тұтамыз, бұл бізге тұтынушыларымызға олардың деректерін сақтау мен өңдеуде барынша сенімділік пен қауіпсіздікті қамтамасыз етуге мүмкіндік береді. Біздің қауіпсіздік бойынша сарапшылар тобы үнемі ақпараттық қауіпсіздіктің жаңа тенденцияларын іздейді және деректерді қорғаудың ең озық әдістерін пайдаланады.
-            Біздің компания сонымен қатар деректерді сақтау бойынша кеңес беру қызметтерін ұсынады және біз өз клиенттерімізге деректерді сақтау және өңдеу туралы дұрыс шешім қабылдауы үшін барлық қажетті білім мен ресурстарды беруге әрқашан дайынбыз.
-            Біз компаниямыздың сақтау саласындағы көшбасшы ғана емес, сонымен қатар инновациялар мен тұтынушыларға сапалы қызмет көрсету саласындағы көшбасшы болуын қамтамасыз етуге тырысамыз. Біз клиенттерімізге деректерді сақтаудың ең күрделі мәселелерін шешуге көмектесуге және оларға ынтымақтастықтың барлық кезеңінде жоғары сапалы қызмет көрсетуге дайынбыз.</p>
+          </p>
         </div>
 
         {% comment %} Наша IT-компания является лидером в области хранения данных и предоставляет клиентам высококачественные услуги по хранению, обработке и защите данных. Мы принимаем заявки от клиентов со всего мира и предлагаем им наиболее эффективные и инновационные решения для их бизнеса.
@@ -50,12 +56,286 @@ ICompany
       </div>
     </div>
 
+    <div class="black_block">
+      <div class="container">
+      </div>
+    </div>
+
+    <div class="services_block">
+      <div class="container">
+
+        <h1 class="services_title">Қызметтер</h1>
+
+        <div class="services">
+          
+          <div class="services_items">
+            
+              <img class="services_img" src="{% static 'img/laptop.svg' %}" alt="">
+            
+              <h3>Веб-қосымшаларды әзірлеу</h3>
+              <p class="descr">
+                Біздің тапсырыс бойынша веб-әзірлеу қызметтеріміз интерфейсті де, 
+                ішкі дамуды да қамтиды. Қолданыстағы қосымшаны жақсарту немесе кәсіпорын қосымшасын жасау болсын, 
+                біздің әзірлеушілер қиындықты жеңуге дайын.
+              </p>
+
+          </div>
+
+          <div class="services_items">
+              <img class="services_img" src="{% static 'img/android.svg' %}" alt="">
+              <h3>Мобильді қосымшаларды әзірлеу</h3>
+              <p class="descr">
+                Бізде көп платформалы Мобильді қосымшаларды құру тәжірибесі бар 
+                Android және IOS құрылғылары үшін. PhoneGap, Xamarin және React Native көмегімен,
+                біз теңшелген мобильді қосымшаны ұсынамыз, ол еш қиындықсыз 
+                бірнеше платформаларда жұмыс істейді.
+              </p>
+
+          </div>     
+          
+          <div class="services_items">
+              <img class="services_img" src="{% static 'img/magic-wand.svg' %}" alt="">
+              <h3>Сандық маркетинг</h3>
+              <p class="descr">
+                Біз ұсынатын цифрлық маркетинг қызметтері 
+                өзінің сүйкімділік жиынтығы. Біздің Қызметтерді пайдалану 
+                сандық Маркетинг, біздің клиенттер хабардарлықты арттыра алады 
+                және онлайн-платформада өз клиенттерімен өзара әрекеттесу.
+              </p>
+
+          </div>    
+            
+        </div>  
+
+      </div>
+    </div>
+
+    <div class="black_block">
+      <div class="container">
+      </div>
+    </div>
+
+
+    <div class="projects_block">
+      <div class="container">
+        
+        <h1 class="projects_title">Жобалар</h1>
+        
+        <div class="projects mySwiper">
+
+          <div class="projects_list swiper-wrapper">
+
+            <div class="project_item swiper-slide" id="slide1">
+
+              <img src="https://kartinkof.club/uploads/posts/2022-12/1670401826_kartinkof-club-p-kartinki-neobichnie-so-smislom-1.jpg" alt="alt">
+              <div class="text">
+
+                <h3 class="project_title">Жоба №1</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur qui doloremque consectetur nesciunt molestiae corporis
+                </p>
+                <a href="#">Толығырақ</a>
+
+              </div>
+
+            </div>
+
+
+            <div class="project_item swiper-slide" id="slide2">
+
+              <img src="https://avatarko.ru/img/kartinka/1/Crazy_Frog.jpg" alt="alt">
+              <div class="text">
+
+                <h3 class="project_title">Жоба №2</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur qui doloremque consectetur nesciunt molestiae corporis
+                </p>
+                <a href="#">Толығырақ</a>
+
+              </div>
+
+            </div>
+
+
+            <div class="project_item swiper-slide" id="slide3">
+
+              <img src="https://n1s1.hsmedia.ru/c6/cb/07/c6cb075801788a8aa6743e7c1d533f59/600x600_1_3385da3571b5694b6829c4da5493ed8e@1200x1200_0xac120004_2890328431678722594.jpeg" alt="alt">
+              <div class="text">
+
+                <h3 class="project_title">Жоба №3</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur qui doloremque consectetur nesciunt molestiae corporis
+                </p>
+                <a href="#">Толығырақ</a>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="black_block">
+      <div class="container">
+      </div>
+    </div>
+
+    
+    <div class="reviews_block">
+      <div class="container">
+        
+        <h1 class="reviews_title">Пікірлер</h1>
+        
+        <div class="reviews">
+          
+          <div class="review_item">
+            <p class="review_message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus omnis quam reprehenderit tempore aliquam alias quod, nobis maiores itaque, recusandae suscipit aspernatur sint ab numquam iusto ea eum hic est.</p>
+
+            <div class="review_author">
+              <img class="review_author_img" src="/static/img/kot.jpg" alt="alt">
+              
+              <div class="author_info">
+                <span class="review_date">25.04.2015</span>
+                <h4 class="review_author_name">Анна Алексеевна</h4>
+              </div>
+            </div>
+
+          </div>
+          
+
+          <div class="review_item">
+            <p class="review_message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus omnis quam reprehenderit tempore aliquam alias quod, nobis maiores itaque, recusandae suscipit aspernatur sint ab numquam iusto ea eum hic est.</p>
+
+            <div class="review_author">
+
+              <img class="review_author_img" src="/static/img/kot.jpg" alt="alt">
+
+              <div class="author_info">
+                <span class="review_date">25.04.2015</span>
+                <h4 class="review_author_name">Анна Алексеевна</h4>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="review_item">
+            <p class="review_message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus omnis quam reprehenderit tempore aliquam alias quod, nobis maiores itaque, recusandae suscipit aspernatur sint ab numquam iusto ea eum hic est.</p>
+
+            <div class="review_author">
+              <img class="review_author_img" src="/static/img/kot.jpg" alt="alt">
+
+              <div class="author_info">
+                <span class="review_date">25.04.2015</span>
+                <h4 class="review_author_name">Анна Алексеевна</h4>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="review_item">
+            <p class="review_message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus omnis quam reprehenderit tempore aliquam alias quod, nobis maiores itaque, recusandae suscipit aspernatur sint ab numquam iusto ea eum hic est.</p>
+
+            <div class="review_author">
+
+              <img class="review_author_img" src="/static/img/kot.jpg" alt="alt">
+
+              <div class="author_info">
+                <span class="review_date">25.04.2015</span>
+                <h4 class="review_author_name">Анна Алексеевна</h4>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="review_item">
+            <p class="review_message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus omnis quam reprehenderit tempore aliquam alias quod, nobis maiores itaque, recusandae suscipit aspernatur sint ab numquam iusto ea eum hic est.</p>
+
+            <div class="review_author">
+
+              <img class="review_author_img" src="/static/img/kot.jpg" alt="alt">
+
+              <div class="author_info">
+                <span class="review_date">25.04.2015</span>
+                <h4 class="review_author_name">Анна Алексеевна</h4>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="review_item">
+            <p class="review_message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus omnis quam reprehenderit tempore aliquam alias quod, nobis maiores itaque, recusandae suscipit aspernatur sint ab numquam iusto ea eum hic est.</p>
+
+            <div class="review_author">
+
+              <img class="review_author_img" src="/static/img/kot.jpg" alt="alt">
+
+              <div class="author_info">
+                <span class="review_date">25.04.2015</span>
+                <h4 class="review_author_name">Анна Алексеевна</h4>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
 
 </main>
+
+<footer>
+  <div class="black_block">
+    <div class="footer_block">
+      <div class="footer">
+
+        <div class="footer_item">
+          <h1 class="footer_title">Ақпарат</h1>
+
+          <ul class="footer_nav">
+            <li><a href="{%url 'news_page'%}">Жаңалықтар</a></li>
+            <li><a href="{% url 'services_page'%}">Қызметтер</a></li>
+            <li><a href="{%url 'projects_page'%}">Жобалар</a></li>
+            <li><a href="{%url 'about_company_page'%}">Компания туралы</a></li>
+          </ul>
+        </div>
+
+        <div class="footer_item">
+          <h1 class="footer_title">Байланыс</h1>
+
+          <div class="footer_info">
+            <span>1300 Орталық Авеню</span>
+            <span>Фресно, Калифорния</span>
+            <span>Америка Құрама Штаттары</span>
+            <p><span>Телефон:</span>+123-456-7890</p>
+            <p><span>Пошта:</span>Info@Example.Com</p>
+          </div>
+
+        </div>
+
+        <div class="footer_item">
+          <h1 class="footer_title">Жазылым</h1>
+
+          
+          <div class="subscribe_block">
+            <p>Біздің дағдыларымызды біріктіре отырып, сіз өзіңіздің брендіңізге қажет нәрсенің бәрін жасай алатын ұжымға ие боласыз. Біздің соңғы жаңартуларымызды алу үшін осында жазылыңыз.</p>
+            <input type="text" placeholder="Введите почту">
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</footer>
 
 {% endblock %}
 
 
 {% block js_scripts %}
   <script src="{% static 'js/home_page.js' %}"></script>
+  <script src="{% static 'js/slider.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 {% endblock %}

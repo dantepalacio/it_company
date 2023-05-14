@@ -157,3 +157,4 @@ msgstr "Қош келдіңіз"
 #: .\company_project\settings.py:152
 msgid "Email Support Service"
 msgstr "Электрондық поштаны қолдау қызметі"
+
